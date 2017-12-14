@@ -74,7 +74,7 @@ public class SMServer extends Thread{
 					else
 						ResponseServer.send(os,"{\"status\":\"error\",\"description\":\"Autentification error!\"}");
 				} else if (httpClientHeader.resourcePath.equals("/sendmsg")){
-
+						if (SenderMessage.sendMsg(bodyMessage))
 					//TODO реализовать отправку сообщения
 					ResponseServer.send(os,"");
 				} else if (httpClientHeader.resourcePath.equals("/getnewmsg")){
