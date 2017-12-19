@@ -78,7 +78,7 @@ public class SMServer extends Thread{
 				} else
 				// Ветка, обрабатывающая запрос на отправку сообщения
 				if (httpClientHeader.resourcePath.equals("/sendmsg")){
-
+					if (SenderMessage.sendMsg(bodyMessage))
 					//TODO реализовать отправку сообщения
 					ResponseServer.send(os,"");
 				} else
